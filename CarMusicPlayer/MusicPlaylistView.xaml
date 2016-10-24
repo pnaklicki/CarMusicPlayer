@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="CarMusicPlayer.MusicPlaylistView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CarMusicPlayer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Border BorderBrush="#FF5B5B5B" BorderThickness="1" HorizontalAlignment="Left" Height="487" Margin="0,124,0,0" VerticalAlignment="Top" Width="360">
+            <ListView x:Name="musicListview" SelectionChanged="musicListview_SelectionChanged" HorizontalAlignment="Left" Height="467" VerticalAlignment="Top" Width="340" Margin="9,9,0,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="300">
+                            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="NoWrap" Text="{Binding Title}" VerticalAlignment="Top" FontSize="20" Width="220"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="10,27,0,0" TextWrapping="Wrap" Text="{Binding Artist}" VerticalAlignment="Top" FontSize="16" Foreground="#FFC5C5C5" Width="220"/>
+                            <AppBarButton HorizontalAlignment="Right" VerticalAlignment="Center" Tapped="RemoveFromPlaylistBtn_Tapped">
+                                <AppBarButton.Icon>
+                                    <FontIcon Glyph="-" FontFamily="Segoe UI" FontSize="30"/>
+                                </AppBarButton.Icon>
+                            </AppBarButton>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Border>
+        <TextBlock x:Name="playlistNameTextbox" HorizontalAlignment="Left" Margin="10,18,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="18"/>
+        <TextBlock x:Name="playlistQuantityTextbox" HorizontalAlignment="Left" Margin="10,81,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="playlistDurationTextbox" HorizontalAlignment="Left" Margin="222,81,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+    </Grid>
+</Page>
